@@ -17,11 +17,6 @@ node{
     }
    sh 'docker push anthoni1995/myweb:0.0.2'
    }
-  stage('Nexus Image Push'){
-   sh "docker login -u admin -p admin123 18.130.238.43:8083"
-   sh "docker tag anthoni1995/myweb:0.0.2 18.130.238.43:8083/anthoni1995:1.0.0"
-   sh 'docker push 18.130.238.43:8083/anthoni1995:1.0.0'
-   }
    stage('Remove Previous Container'){
 	try{
 		sh 'docker rm -f tomcattest'
